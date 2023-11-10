@@ -1,0 +1,136 @@
+/*=======Скидання стилів=======*/
+@import url("reset.css");
+
+
+
+
+body {
+	background-image: url(../img/fon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+}
+
+/* .box {} */
+
+/* анімація 1 */
+@keyframes transform { /* створили сценарій */
+	0% {
+		transform: translate(20px);
+	}
+	100% {
+		transform: translate(520px);
+	}
+}
+
+/* анімація 2 */
+@keyframes rotate { /* створили сценарій */
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* анімація 3 */
+@keyframes run { /* створили сценарій */
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+/* анімація 4 */
+@keyframes scale { /* створили сценарій */
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(4.5);
+	}
+}
+
+/* анімація 5 ---тут застосований один сценарій---*/
+@keyframes scaleAndTranslateX { /* створили сценарій */
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(10);
+	  }
+	100% {
+		transform: translateX(1920px) /* луна сховається за межі екрану 1920рх  */ scale(14)/* лунеа збільшиться до 14 одиниць */;
+	}
+}
+
+.box__image {
+	width: 50px; /* щоб задати ширину та висоту блоку */
+	height: 50px;/* щоб задати ширину та висоту блоку */
+	position: relative; /* для анімації */
+
+	animation-name: scaleAndTranslateX; /* приєднали сценарій */
+	animation-delay: 0.2s; /* затримка анімації */
+	animation-duration: 15s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+}	
+
+.box__image img{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 100px; /* розмір планети */
+	height: 80px; /* розмір планети */
+}
+
+
+/* -------box---milky-way----------- */
+/* анімація 1  ---тут застосований один сценарій---*/
+  @keyframes milky-wayTranslateX { /* створили сценарій */
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: translateX(-50%);
+	  }
+	100% {
+		transform: translateY(1280px) /* img сховається за межі екрану 1920рх  */ scale(5)/* лунеа збільшиться до 5 одиниць */;
+	}
+}
+  
+.box__milky-way {
+	position: relative; /* для анімації */
+
+	animation-name: milky-wayTranslateX;  /* приєднали сценарій */
+	animation-delay: 15s;  /* затримка анімації */
+	animation-duration: 15s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+}
+
+.box__milky-way img{
+	position: absolute;
+	top: 0px;
+	right: 20px;
+	width: 50px; /* розмір планети */
+	height: 30px; /* розмір планети */
+	
+}
+
+
+/* .footer {
+} */
