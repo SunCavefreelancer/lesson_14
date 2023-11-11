@@ -1,3 +1,6 @@
+/*=======Підключення шрифтів=======*/
+@import url("fonts.css");
+
 /*=======Скидання стилів=======*/
 @import url("reset.css");
 
@@ -16,6 +19,92 @@ body {
 	min-height: 100%;
 }
 
+
+/* ---------------text-------------- */
+/* анімація 1 ---тут застосований один сценарій-----text-----*/
+@-webkit-keyframes focus-in-expand {
+	0% {
+	  letter-spacing: -0.5em;
+	  -webkit-filter: blur(12px);
+			  filter: blur(12px);
+	  opacity: 0;
+	}
+	100% {
+	  -webkit-filter: blur(0px);
+			  filter: blur(0px);
+	  opacity: 1;
+	}
+  }
+  @keyframes focus-in-expand {
+	0% {
+	  letter-spacing: -0.5em;
+	  -webkit-filter: blur(12px);
+			  filter: blur(12px);
+	  opacity: 0;
+	  top: 50%;
+	  left: 0;
+
+	}
+	100% {
+	  -webkit-filter: blur(0px);
+			  filter: blur(0px);
+	  opacity: 1;
+		transform: translateY(70%);
+	}
+  }
+  
+  
+  
+  
+  
+.text {
+	padding: 200px 0px 0px 0px;
+	font-family: 'Allods-West';
+}
+.text__container {
+	max-width: 950px;
+	margin: 0 auto;
+	color: white;
+	text-shadow: 1px 1px 0 #000;
+}
+h1 {
+	font-size: 55px;
+	text-align: center;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 50px;
+	animation: focus-in-expand 13s 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.text__title {
+	max-width: 650px;
+	margin: 0 auto;
+	line-height: 140%;
+	font-size: 25px;
+	text-align: center;
+	animation: focus-in-expand 15s 4.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	margin-bottom: 300px;
+}
+.text__sub-title {	
+	max-width: 650px;
+	margin: 0 auto;
+	line-height: 140%;
+	font-size: 25px;
+	text-align: center;
+	margin-top: -250px;
+	animation: focus-in-expand 17s 5.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.text__third-title {	
+	max-width: 650px;
+	margin: 0 auto;
+	line-height: 140%;
+	font-size: 25px;
+	text-align: center;
+	animation: focus-in-expand 16s 6.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* --------------------------------- */
+
 /* .box {} */
 
 /* анімація 1 */
@@ -28,15 +117,6 @@ body {
 	}
 }
 
-/* анімація 3 */
-@keyframes run { /* створили сценарій */
-	0% {
-		right: 0;
-	}
-	100% {
-		right: 100%;
-	}
-}
 
 /* анімація 4 */
 @keyframes scale { /* створили сценарій */
@@ -233,7 +313,7 @@ body {
 	position: absolute;
 	top: -100px;
 	left: 20px;
-	animation: shadow 18s linear 23s forwards; /* загальний запис послідовності */
+	animation: shadow 25s linear 23s forwards; /* загальний запис послідовності */
 } 
 .box__shadow img{
 	width: 200px; /* розмір планети */
@@ -272,7 +352,8 @@ body {
 }
 .box__shadow-green img{
 	width: 200px; /* розмір планети */
-	height: 160px; /* розмір планети */
+	height: 200px; /* розмір планети */
+
 }
 
 
@@ -281,18 +362,21 @@ body {
   @keyframes shadow-pink {
 	/* створили сценарій */
 	0% {
-		transform: scale(1);
-		top: 0px;
-		right: 20px;
+		transform: scale(2);
+		transform: rotateY(90deg);
+		bottom: 0px;
+		left: 50px;
 	}
 	25% {
-		transform: scale(7);
-	  transform: rotateX(90deg);
+		transform: scale(3);
+	  transform: rotateX(100deg);
+	  left: 150px;
+	  bottom: 0px;
 	}
 	100% {
-	  transform: scale(8);
-	  right: 3200px;/* дійде до ЛІВОГО екрану */
-	  bottom: -200px; 
+	  transform: scale(4);
+	  left: 3200px;/* дійде до ПРАВОГО екрану */
+	  bottom: 0px; 
 	}
   }
 
@@ -301,7 +385,7 @@ body {
 	position: absolute;
 	top: 200px;
 	left: -200px;
-	animation: shadow-pink 13s linear 37s backwards; /* загальний запис послідовності */
+	animation: shadow-pink 13s linear 40s forwards; /* загальний запис послідовності */
 }
 .box__shadow-pink img{
 	width: 250px; /* розмір планети */
@@ -310,14 +394,184 @@ body {
 
 
 
+/* -----------box__star------------------ */
+  /* анімація 1  ---тут застосований один сценарій-star--*/
+  @-webkit-keyframes star {
+	0% {
+	  -webkit-transform: rotate(0);
+			  transform: rotate(0);
+			  right: 0;
+			  bottom: 0;
+	}
+	100% {
+	  -webkit-transform: rotate(360deg);
+			  transform: rotate(360deg);
+			  right: -100%;
+			  bottom: 0;
+	}
+  }
+  @keyframes star {
+	0% {
+	  -webkit-transform: rotate(0);
+			  transform: rotate(0);
+			  right: -100%;
+			  bottom: 0;
+	}
+	100% {
+	  -webkit-transform: rotate(220deg);
+			  transform: rotate(220deg);
+			  right: 0;
+			  bottom: 0;
+	}
+  }
+
+.box__star {
+	position: absolute;
+	top: 650px;
+	left: 0px;
+	animation: star 25s 0.2s ease-in-out both;
+}
+.box__star img{
+	width: 200px; /* розмір star */
+	height: 150px; /* розмір star */
+}
+
+/* ----------------------------------------------------- */
+
+/* ----.box__shadow-blue--------------------- */
+  /* анімація 1  ---тут застосований один сценарій---shadow-blue--*/
+  @-webkit-keyframes shadow-blue {
+	0% {
+	  -webkit-transform: translateY(0) rotateX(0) scale(1);
+			  transform: translateY(0) rotateX(0) scale(1);
+	  -webkit-transform-origin: 50% 1400px;
+			  transform-origin: 50% 1400px;
+	  opacity: 1;
+	}
+	100% {
+	  -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+			  transform: translateY(-600px) rotateX(-30deg) scale(0);
+	  -webkit-transform-origin: 50% 100%;
+			  transform-origin: 50% 100%;
+	  opacity: 1;
+	}
+  }
+  @keyframes shadow-blue {
+	0% {
+	  -webkit-transform: translateY(0) rotateX(0) scale(1);
+			  transform: translateY(0) rotateX(0) scale(1);
+	  -webkit-transform-origin: 50% 1400px;
+			  transform-origin: 50% 1400px;
+	  opacity: 1;
+	}
+	100% {
+	  -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+			  transform: translateY(-600px) rotateX(-30deg) scale(0);
+	  -webkit-transform-origin: 50% 100%;
+			  transform-origin: 50% 100%;
+	  opacity: 1;
+	}
+  }
+  
+
+.box__shadow-blue {
+	position: absolute;
+	top: 700px;
+	left: 100px;
+	animation: shadow-blue 16s 0.7s ease-in both;
+}
+.box__shadow-blue img {
+	width: 200px; /* розмір star */
+	height: 150px; /* розмір star */
+	border-radius: 50%;
+}
 
 
+/* --------------.box__kometa  ------------------- */
+  /* анімація 1  ---тут застосований один сценарій---kometa --*/
+@keyframes kometa { /* створили сценарій */
+	0% {
+		right: 0;
+		transform: translateY(0px);
+	}
+	100% {
+		right: 100%;
+		transform: translateY(1020px);
+	}
+}
+
+.box__kometa {
+	position: absolute;
+	top: -450px;
+	right: 0px;
+	animation: kometa 2s linear 2.2s forwards;
+}
 
 
+  /* анімація 1  ---тут застосований один сценарій---kom --*/
+  @keyframes kometa-2 { /* створили сценарій */
+	0% {
+		right: 0%;
+		transform: translateX(0px);
+		transform: scale(1);
+		transform: rotateZ(250deg);
+		transform: translate(50px, 20px) rotate(-90deg) skew(-20deg, 20deg);
+	}
+	100% {
+		right: 100%;
+		transform: translateX(2300px);
+	}
+}
+.box__kometa-2 {
+	position: absolute;
+	bottom: -150px;
+	left: -300px;
+	animation: kometa-2 2.2s linear 3s forwards;
+}
+.box__kometa-2 img{
+	width: 350px;
+	height: 350px;
+}
 
 
+/* -----------------------kometa-pink-------------------------- */
+  /* анімація 1  ---тут застосований один сценарій---kometa-pink --*/
+  @keyframes kometa-pink { /* створили сценарій */
+	0% {
+		right: 0%;
+		transform: translateX(0px); /* справа */
+	}
+	25% {
+		right: 20%;
+		transform: translateY(140px); /* вниз */
+		transform: scale(1);
+	}
+	50% {
+		right: 50%;
+		transform: translateY(1350px); /* вверх */
+	}
+	70% {
+		right: 30%;
+		transform: scale(2);
+	}
+	100% {
+		right: 100%;
+		transform: translateY(2300px); /* влево */
+		transform: scale(3);
+	}
+}
 
 
+.box__kometa-pink {
+	position: absolute;
+	top: -350px;
+	right: 400px;
+	animation: kometa-pink 15s linear 45s forwards;
+}
+.box__kometa-pink img{
+	width: 490px;
+	height: 430px;
+}
 
 
 /* .footer {
