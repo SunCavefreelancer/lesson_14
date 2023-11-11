@@ -8,7 +8,7 @@
 
 
 body {
-	background-image: url(../img/fon.png);
+	background-image: url(../img/fon.webp);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -92,6 +92,7 @@ h1 {
 	font-size: 25px;
 	text-align: center;
 	margin-top: -250px;
+	margin-bottom: 50px;
 	animation: focus-in-expand 17s 5.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 .text__third-title {	
