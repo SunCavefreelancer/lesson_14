@@ -148,7 +148,7 @@ h1 {
 	position: relative; /* для анімації */
 
 	animation-name: scaleAndTranslateX; /* приєднали сценарій */
-	animation-delay: 0.2s; /* затримка анімації */
+	animation-delay: 0,5s; /* затримка анімації */
 	animation-duration: 15s; /* встановили час тривалості сценарію */
 	animation-timing-function: linear;/* плавність */
 	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
