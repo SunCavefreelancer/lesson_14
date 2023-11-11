@@ -28,23 +28,13 @@ body {
 	}
 }
 
-/* анімація 2 */
-@keyframes rotate { /* створили сценарій */
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
 /* анімація 3 */
 @keyframes run { /* створили сценарій */
 	0% {
-		left: 0;
+		right: 0;
 	}
 	100% {
-		left: 100%;
+		right: 100%;
 	}
 }
 
@@ -95,41 +85,239 @@ body {
 }
 
 
-/* -------box---milky-way----------- */
-/* анімація 1  ---тут застосований один сценарій---*/
-  @keyframes milky-wayTranslateX { /* створили сценарій */
+
+
+/* -------box---pilot----------- */
+
+/* анімація 1 */
+@keyframes transform { /* створили сценарій для pilot-*/
 	0% {
-		transform: scale(1);
+		transform: translate(0px);
 	}
-	50% {
-		transform: translateX(-50%);
-	  }
 	100% {
-		transform: translateY(1280px) /* img сховається за межі екрану 1920рх  */ scale(5)/* лунеа збільшиться до 5 одиниць */;
+		transform: translate(-2200px);/* направили за межі екрану ВЛІВО*/
 	}
 }
   
-.box__milky-way {
+.box__pilot {
 	position: relative; /* для анімації */
 
-	animation-name: milky-wayTranslateX;  /* приєднали сценарій */
-	animation-delay: 15s;  /* затримка анімації */
-	animation-duration: 15s; /* встановили час тривалості сценарію */
+	animation-name: transform;  /* приєднали сценарій для pilot-*/
+	animation-delay: 9s;  /* затримка анімації */
+	animation-duration: 4s; /* встановили час тривалості сценарію */
 	animation-timing-function: linear;/* плавність */
 	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
-	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	animation-direction: alternate /* reverse */; /* alternate-reverse */ /*alternate напрямок анімації - ця в зворотньому */
 	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
-	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+	animation-fill-mode: forwards; /* у кінцевому положенні*/ /* backwards - у початковому положенні */
 }
 
-.box__milky-way img{
+.box__pilot img{
 	position: absolute;
 	top: 0px;
-	right: 20px;
-	width: 50px; /* розмір планети */
-	height: 30px; /* розмір планети */
-	
+	right: -220px; /* сховали за межі екрану */
+	width: 200px; /* розмір */
+	height: 160px; /* розмір */
 }
+
+
+
+/* -------------box__nebula--------------- */
+/* анімація 4 */
+@keyframes nebula { /* створили сценарій для box__nebula-*/
+	0% {
+		transform: rotateY(1deg); /* "1" починається рух З ТОЧКИ позіціонування */
+	}
+	100% {
+		transform: rotateY(180deg);
+	}
+}
+
+
+.box__nebula {
+	position: relative;
+
+	animation-name: nebula;  /* приєднали сценарій для box__nebula--*/
+	animation-delay: 12s;  /* затримка анімації */
+	animation-duration: 7s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */; /* alternate-reverse */ /*alternate напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards; /* у кінцевому положенні*/ /* backwards - у початковому положенні */
+}
+
+.box__nebula img{
+	width: 1350px;
+	height: 1200px;
+	position: absolute;
+	top: -100px;  /* приблизно по центру */
+	right: -1300px; /* приблизно по центру */
+	border-radius: 60%;
+}
+
+
+
+
+/* --------------box__way------------------- */
+/* анімація 1  ---тут застосований один сценарій---*/
+@keyframes way {
+	/* створили сценарій */
+	0% {
+		transform: rotateY(-45deg);
+		top: 0px;
+	}
+	25% {
+	  transform: scale(8);
+	  top: 400px;
+	}
+	50% {
+		transform: scale(12);
+		top: 800px;
+	}
+	100% {
+	  transform: scale(10);
+	  top: 0px;
+	  right: 2450px; /* дійде до ЛІВОГО екрану */
+	}
+  }
+
+
+.box {
+	position: relative;
+}
+.box__way {
+	position: absolute;
+	top: -100px;
+	right: 20px;
+	animation: way 14s linear 19s forwards; /* загальний запис послідовності */
+}
+
+.box__way img {
+	width: 170px; /* розмір планети */
+	height: 130px; /* розмір планети */
+  }
+
+
+
+
+  /* --------------------------.box__shadow--------------------------- */
+  /* анімація 1  ---тут застосований один сценарій---*/
+@keyframes shadow {
+	/* створили сценарій */
+	0% {
+		transform: scale(2);
+		transform: rotateY(90deg);
+		top: 0px;
+		left: 50px;
+	}
+	25% {
+		transform: scale(4);
+	  transform: rotateY(90deg);
+	  bottom: 80px; 
+	}
+	50% {
+		transform: scale(7);
+	}
+	100% {
+	  transform: scale(8);
+	  left: 2500px;/* дійде до ПРАВОГО екрану */
+	  bottom: 80px; 
+	}
+  }
+
+.box {
+	position: relative;
+}
+  .box__shadow {
+	position: absolute;
+	top: -100px;
+	left: 20px;
+	animation: shadow 18s linear 23s forwards; /* загальний запис послідовності */
+} 
+.box__shadow img{
+	width: 200px; /* розмір планети */
+	height: 160px; /* розмір планети */
+	border-radius: 50%;
+}
+
+/* ---------.box__shadow-green ------------------ */
+  /* анімація 1  ---тут застосований один сценарій-shadow-green--*/
+  @keyframes shadow-green {
+	/* створили сценарій */
+	0% {
+		transform: scale(1);
+		top: -10px;
+		right: 150px;
+	}
+	25% {
+		transform: scale(7);
+	  transform: rotateY(90deg);
+	}
+	50% {
+		transform: scale(5);
+	}
+	100% {
+	  transform: scale(8);
+	  right: 2500px;/* дійде до ЛІВОГО екрану */
+	  top: 10px; 
+	}
+  }
+
+.box__shadow-green {
+	position: absolute;
+	top: 0;
+	right: 0;
+	animation: shadow-green 15s linear 32s forwards; /* загальний запис послідовності */
+}
+.box__shadow-green img{
+	width: 200px; /* розмір планети */
+	height: 160px; /* розмір планети */
+}
+
+
+/* ----------.box__shadow-pink------------------ */
+  /* анімація 1  ---тут застосований один сценарій-shadow-pink--*/
+  @keyframes shadow-pink {
+	/* створили сценарій */
+	0% {
+		transform: scale(1);
+		top: 0px;
+		right: 20px;
+	}
+	25% {
+		transform: scale(7);
+	  transform: rotateX(90deg);
+	}
+	100% {
+	  transform: scale(8);
+	  right: 3200px;/* дійде до ЛІВОГО екрану */
+	  bottom: -200px; 
+	}
+  }
+
+
+.box__shadow-pink {
+	position: absolute;
+	top: 200px;
+	left: -200px;
+	animation: shadow-pink 13s linear 37s backwards; /* загальний запис послідовності */
+}
+.box__shadow-pink img{
+	width: 250px; /* розмір планети */
+	height: 190px; /* розмір планети */
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* .footer {
