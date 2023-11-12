@@ -23,10 +23,7 @@ body {
 /* .header {} */
 
 .play-town {
-/* 	max-width: 1200px; */
-	margin-left: 500px;
-	padding: 40px 20px 0px 20px;
-
+	padding: 500px 0px 0px 1200px;
 }
 /* ---оболочка--- */
 .pool {
@@ -295,9 +292,10 @@ body {
 .sun {
 	width: 80px; 
 	height: 80px; 
-	padding-top: 50px;
 	background: rgb(241, 241, 5);
-	position: relative;
+	position: absolute;
+	top: 100px;
+	right: 800px;
 
 	animation: sun 5s linear infinite alternate;
 }
@@ -345,7 +343,7 @@ body {
 	
 	.birds__item {
 		position: absolute;
-		top: 100px;
+		top: 200px;
 		left: 0;
 
 	/* приєднали сценарій */
@@ -370,16 +368,15 @@ body {
 	.leleka {
 		position: relative;
 		z-index: 0;
-		max-width: 450px; /* залітає лелека прямо в хатинку */
+		/*max-width: 250px; /* залітає лелека прямо в хатинку */
 	}
 	.leleka__item {
 		position: absolute;
-		top: 120px;
-		right: -920px;
+		top: 350px;
+		right: -250px;
 
 	   /* приєднали сценарій */
-	   animation: slide-out-bck-left 15s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-
+ 		animation: leleka 15s 3s linear 1 forwards;
 	}
 
 	.leleka__item img {
@@ -387,33 +384,17 @@ body {
 		height: 200px;
 	}
 	/* 1 */
-	/* задаємо сценарій */
-	@-webkit-keyframes slide-out-bck-left {
+	/* задаємо сценарій */ 
+	  @keyframes leleka {
 		0% {
-		  -webkit-transform: translateZ(0) translateX(0);
-				  transform: translateZ(0) translateX(0);
-		  opacity: 1;
+			right: 0%;
+			transform: translateX(0px);
 		}
 		100% {
-		  -webkit-transform: translateZ(-1100px) translateX(-1000px);
-				  transform: translateZ(-1100px) translateX(-1000px);
-		  opacity: 0;
+			right: 40%; /* залетів лелека в хату */
+			transform: translateX(-500px);
 		}
-	  }
-	  @keyframes slide-out-bck-left {
-		0% {
-		  -webkit-transform: translateZ(0) translateX(0);
-				  transform: translateZ(0) translateX(0);
-		  opacity: 1;
-		}
-		100% {
-		  -webkit-transform: translateZ(-1100px) translateX(-1000px);
-				  transform: translateZ(-1100px) translateX(-1000px);
-			/* 	  opacity: 0; */
-		}
-	  }
-	  
-	  
+	}
 	  
 
 
@@ -425,13 +406,62 @@ body {
 		z-index: 1;
 	}
 	.house__item img{
-		width: 480px;
-		height: 380px;
+		width: 780px;
+		height: 580px;
 		filter: drop-shadow(10px 10px 4px #ded09f);
 	}
 	.house__item {
 		position: absolute;
-		top: 70px;
+		top: 300px;
 		left: -30px;
 		transform: rotateY(-180deg);		
+	}
+
+
+
+	/* -------------------------------dog--------------------------------- */
+	.dog {
+	}
+	.dog__item {
+		position: absolute;
+		top: 700px;
+		left: 600px;
+		z-index: 3;
+	}
+	.dog__item img{
+		width: 100px;
+		height: 140px;
+	}
+	.dog__item::after { /* хвостик */
+		content: "";
+		display: inline-block;
+		width: 8px;
+		height: 20px;
+		background-color: coral;
+		transform: rotate(45deg);
+		position: absolute;
+		top: 47px;
+		right: -500px;
+		border-radius: 50%;	
+
+		/* приєднали сценарій */
+		animation: dog  0.5s ease 0.1s infinite alternate;
+	}
+		
+			.leleka__item img {
+				width: 250px;
+				height: 200px;
+			}
+	/* 1 */
+	/* задаємо сценарій */ 
+	@keyframes dog {
+		0% {
+			left: 0%;
+			transform: rotate(1px);
+		}
+		100% {
+			left: 1%;
+			transform: translateZ(0px);
+
+		}
 	}
