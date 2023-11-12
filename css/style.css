@@ -20,6 +20,17 @@ body {
 }
 
 
+.text__third-title a {
+	text-decoration: underline;
+	color: aqua;
+	transition: 0.5s;
+}
+.text__third-title a:hover {
+	color: rgb(239, 248, 248);
+	font-weight: 800;
+	text-decoration: none;
+}
+
 /* ---------------text-------------- */
 /* анімація 1 ---тут застосований один сценарій-----text-----*/
 @-webkit-keyframes focus-in-expand {

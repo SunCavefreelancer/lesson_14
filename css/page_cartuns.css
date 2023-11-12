@@ -1,0 +1,437 @@
+/*=======Підключення шрифтів=======*/
+@import url("fonts.css");
+
+/*=======Скидання стилів=======*/
+@import url("reset.css");
+
+
+body {
+	background-image: url(../img/фон2.png);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 0;
+}
+
+
+/* --------------------------- */
+.wrapper {
+	overflow: clip;
+	min-height: 100%;
+}
+/* .header {} */
+
+.play-town {
+	max-width: 1200px;
+	margin-left: 500px;
+	padding: 40px 20px 0px 20px;
+
+}
+/* ---оболочка--- */
+.pool {
+	margin: 0px auto;
+	padding: 160px 0px 0px 0px;
+	margin-top: 60px;
+}
+
+/* ---коробка--- */
+.block-pool {
+	width: 300px;
+	height: 80px;
+	background-color: rgb(228, 126, 2);
+	border-radius: 20px;
+	box-shadow: 0 5px 0 #2f2f2fa9;
+
+	position: relative;
+	z-index: 2;
+}
+.block-pool::before { /* верх песочницы */
+	content: "";
+	display: inline-block;
+	width: 310px;
+	height: 30px;
+	background-color: tomato;
+	border-radius: 20px;
+	margin-left: -9px;
+	margin-top: -3px;
+	border: 3px solid #acacac;
+	box-shadow: 0 5px 0 #2f2f2fa9;
+}
+.block-pool::after { /* песок */
+	content: "";
+	display: inline-block;
+	background-image: url(../img/песок.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 450px;
+	height: 180px;
+	position: absolute;
+	top: -20px;
+	right: -60px;
+	z-index: 3;
+	filter: drop-shadow(30px 10px 4px #ded09f);
+	transition: 0.5s;
+}
+
+.block-pool__item:hover {
+	opacity: 0.7;
+}
+
+
+.block-pool__item { /* песочница */
+	position: absolute;
+	top: -10px;
+	left: 220px;
+	z-index: 4;
+}
+.block-pool__item img {
+	width: 200px;
+	height: 140px;
+	filter: drop-shadow(30px 10px 4px #ded09f);
+}
+
+
+/* ---коробка--з м'ячиками----- */
+.block-ball {
+	margin-top: -170px;
+	z-index: 1;
+}
+.block-ball__item { /* м'ячік */
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: aquamarine;
+	display: inline-block;
+}
+/* 1 */
+/* задаємо сценарій */
+@keyframes baal-1 {
+	0% {
+		transform: translateY(100px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+.block-ball__item:nth-child(1){
+	background: rgb(0, 238, 255);
+	
+	/* приєднали сценарій */
+	animation: baal-2 2s 0.1s ease-in-out infinite;
+}
+
+/* 2 */
+/* задаємо сценарій */
+@keyframes baal-2 {
+	0% {
+		transform: translateY(100px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(100px);
+	}
+}
+.block-ball__item:nth-child(2){
+	background: red;
+
+	animation: baal-2 1s 0.2s ease-in-out infinite backwards;
+}
+
+/* 3 */
+/* задаємо сценарій */
+@keyframes baal-3 {
+	0% {
+		transform: translateY(150px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(150px);
+	}
+}
+.block-ball__item:nth-child(3){
+	background: rgb(0, 145, 255);
+
+	animation: baal-2 2.2s 0.1s ease-in-out infinite backwards;
+}
+
+/* 4 */
+/* задаємо сценарій */
+@keyframes baal-4 {
+	0% {
+		transform: translateY(100px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(100px);
+	}
+}
+.block-ball__item:nth-child(4){
+	background: rgb(81, 255, 0);
+	/* задаємо сценарій */
+	animation: baal-4  1.4s ease-in-out 0.2s infinite backwards;
+}
+
+
+/* 5 */
+/* задаємо сценарій */
+@keyframes baal-5 {
+	0% {
+		transform: translateY(145px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(145px);
+	}
+}
+/* 5 */
+.block-ball__item:nth-child(5){
+	background: rgb(251, 255, 44);
+	/* задаємо сценарій */
+	animation: baal-5  1.5s ease-in-out 0.1s infinite backwards;
+}
+
+/* 6 */
+/* задаємо сценарій */
+@keyframes baal-6 {
+	0% {
+		transform: translateY(140px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(140px);
+	}
+}
+.block-ball__item:nth-child(6){
+	background: rgb(255, 0, 251);
+	/* задаємо сценарій */
+	animation: baal-6 2.2s ease-in-out 0.2s infinite backwards;
+}
+
+
+/* 7 */
+/* задаємо сценарій */
+@keyframes baal-7 {
+	0% {
+		transform: translateY(130px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(130px);
+	}
+}
+.block-ball__item:nth-child(7){
+	background: rgb(255, 140, 0);
+	/* приєднали сценарій */
+	animation: baal-7 1.2s ease-in-out 0.1s infinite backwards;
+}
+
+/* 8 */
+/* задаємо сценарій */
+@keyframes baal-8 {
+	0% {
+		transform: translateY(90px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(90px);
+	}
+}
+.block-ball__item:nth-child(8){
+	background: rgb(174, 0, 255);
+	/* приєднали сценарій */
+	animation: baal-8 1.2s ease-in-out 0.1s infinite backwards;
+}
+.block-ball__item:nth-child(9){
+	background: rgb(255, 0, 149);
+	/* приєднали сценарій */
+	animation: baal-2 1.2s ease-in-out 0.2s infinite backwards;
+}
+.block-ball__item:nth-child(10){
+	background: rgb(234, 255, 0);
+		/*/* приєднали сценарій */
+		animation: baal-3 1.2s ease-in-out 0.2s infinite backwards;
+}
+.block-ball__item:nth-child(11){
+	background: rgb(166, 185, 248);
+		/* приєднали сценарій */
+		animation: baal-7 1.2s ease-in-out 0.1s infinite backwards;
+}
+.block-ball__item:nth-child(12){
+	background: rgb(247, 0, 255);
+		/* приєднали сценарій */
+		animation: baal-6 1.2s ease-in-out 0.2s infinite backwards;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* сонечко */
+/* 1 */
+/* задаємо сценарій */
+@keyframes sun {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(720deg);
+	}
+}
+
+.sun {
+	width: 80px; 
+	height: 80px; 
+	padding-top: 50px;
+	background: rgb(241, 241, 5);
+	position: relative;
+
+	animation: sun 5s linear infinite alternate;
+}
+
+	.sun:before, 
+	.sun:after {
+	content: "";
+	height: 80px; 
+	width: 80px;
+	background: inherit;
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	}
+	.sun:before {
+	transform: rotate(30deg);;
+	}
+	.sun:after {
+	transform: rotate(60deg);
+	}
+
+
+
+
+
+	/* ----------------------burds--------------------- */
+	.birds {
+		position: relative;
+		z-index: 2;
+	}
+
+	/* пташка */
+	/* 1 */
+	/* задаємо сценарій */
+	@keyframes bird {
+		0%{
+			left: 0;
+			transform: translateX(0px);
+		}
+		100%{
+			left: 100%;
+			transform: translateX(1920px);
+		}
+	}
+	
+	.birds__item {
+		position: absolute;
+		top: 100px;
+		left: 0;
+
+	/* приєднали сценарій */
+	animation-name: bird; /* приєднали сценарій */
+	animation-delay: 0,2s; /* затримка анімації */
+	animation-duration: 17s; /* встановили час тривалості сценарію */
+	animation-timing-function: linear;/* плавність */
+	animation-iteration-count: 1;/* infinite -нескінченне */ /* або 1, 2, 3... */  /* кіл-сть повторень анімації */
+	animation-direction: alternate /* reverse */ /* alternate-reverse */; /* напрямок анімації - ця в зворотньому */
+	/*animation-play-state: running; /* запустили - це за замовченням, а при hover:paused, none; */ 
+	animation-fill-mode: forwards /* у кінцевому положенні*/ /* backwards - у початковому положенні */;
+}
+	.birds__item img {
+		width: 130px;
+		height: 100px;
+	}
+
+
+
+	/* -----------------.leleka --------------------- */
+
+	.leleka {
+		position: relative;
+		z-index: 0;
+		max-width: 450px; /* залітає лелека прямо в хатинку */
+	}
+	.leleka__item {
+		position: absolute;
+		top: 120px;
+		right: -920px;
+
+	   /* приєднали сценарій */
+	   animation: slide-out-bck-left 15s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+	}
+
+	.leleka__item img {
+		width: 250px;
+		height: 200px;
+	}
+	/* 1 */
+	/* задаємо сценарій */
+	@-webkit-keyframes slide-out-bck-left {
+		0% {
+		  -webkit-transform: translateZ(0) translateX(0);
+				  transform: translateZ(0) translateX(0);
+		  opacity: 1;
+		}
+		100% {
+		  -webkit-transform: translateZ(-1100px) translateX(-1000px);
+				  transform: translateZ(-1100px) translateX(-1000px);
+		  opacity: 0;
+		}
+	  }
+	  @keyframes slide-out-bck-left {
+		0% {
+		  -webkit-transform: translateZ(0) translateX(0);
+				  transform: translateZ(0) translateX(0);
+		  opacity: 1;
+		}
+		100% {
+		  -webkit-transform: translateZ(-1100px) translateX(-1000px);
+				  transform: translateZ(-1100px) translateX(-1000px);
+			/* 	  opacity: 0; */
+		}
+	  }
+	  
+	  
+	  
+
+
+	  /* --------------------------------.house---------------------- */
+
+
+	.house {
+		position: relative;
+		z-index: 1;
+	}
+	.house__item img{
+		width: 480px;
+		height: 380px;
+		filter: drop-shadow(10px 10px 4px #ded09f);
+	}
+	.house__item {
+		position: absolute;
+		top: 70px;
+		left: -30px;
+		transform: rotateY(-180deg);		
+	}
