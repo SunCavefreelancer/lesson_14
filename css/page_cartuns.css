@@ -28,8 +28,7 @@ body {
 /* ---оболочка--- */
 .pool {
 	margin: 0px auto;
-	padding: 160px 0px 0px 0px;
-	margin-top: 60px;
+	padding: 50px 0px 0px 0px;
 }
 
 /* ---коробка--- */
@@ -421,12 +420,16 @@ body {
 
 	/* -------------------------------dog--------------------------------- */
 	.dog {
+		max-width: 100px;
 	}
 	.dog__item {
-		position: absolute;
+		position: relative;
 		top: 700px;
 		left: 600px;
-		z-index: 3;
+		z-index: 3;		
+
+
+/* 		border: 5px solid red; */
 	}
 	.dog__item img{
 		width: 100px;
@@ -434,34 +437,159 @@ body {
 	}
 	.dog__item::after { /* хвостик */
 		content: "";
-		display: inline-block;
-		width: 8px;
-		height: 20px;
-		background-color: coral;
-		transform: rotate(45deg);
+		display: inline-block;		
+		width: 10px;
+		height: 25px;
+		background-color: rgb(229, 95, 46);
 		position: absolute;
-		top: 47px;
-		right: -500px;
-		border-radius: 50%;	
+		top: 50px;
+		left: 80px;
+		border-radius: 30%;	
+		
+		transform-origin: bottom; /* для анимації низа хвостика */
 
 		/* приєднали сценарій */
-		animation: dog  0.5s ease 0.1s infinite alternate;
+		animation: dog  1s ease infinite alternate;
 	}
 		
-			.leleka__item img {
-				width: 250px;
-				height: 200px;
-			}
+		.leleka__item img {
+			width: 250px;
+			height: 200px;
+		}
 	/* 1 */
 	/* задаємо сценарій */ 
 	@keyframes dog {
 		0% {
-			left: 0%;
-			transform: rotate(1px);
+			transform: rotate(20deg);
+		}
+		50% {
+			transform: rotate(5deg);
+
 		}
 		100% {
-			left: 1%;
-			transform: translateZ(0px);
+			transform: rotate(25deg);
 
+		}
+	}
+
+
+
+
+	/* -----------------air---------------------------- */
+	.air {
+	}
+	.air__item { 
+		position: absolute;
+		top: 500px;
+		left: 200px;
+	}
+
+	/* 1 */
+	.air__item img:nth-child(1){ /* общие настройки для всех шариков */
+		width: 110px;
+		height: 150px;
+	}
+	.air__item:nth-child(1) {
+		width: 110px;
+		height: 150px;
+		/* приєднали сценарій */
+		animation: air 5s 17s linear 1 forwards;
+	}
+
+
+	/* 2 */
+	.air__item img:nth-child(2){ /* общие настройки для всех шариков */
+		width: 110px;
+		height: 150px;
+	}
+	.air__item:nth-child(2) {
+		/* приєднали сценарій */
+		animation: air 6s 18s linear 1 forwards;
+	}
+
+
+		/* 3 */
+		.air__item img:nth-child(3){ /* общие настройки для всех шариков */
+			width: 200px;
+			height: 250px;
+		}
+		.air__item:nth-child(3) {
+			/* приєднали сценарій */
+			animation: air 7s 19s linear 1 forwards;
+
+			position: absolute;
+			top: 500px;
+			left: 80px;
+		}
+
+
+		/* 4 */
+		.air__item img:nth-child(4){ /* общие настройки для всех шариков */
+			width: 200px;
+			height: 250px;
+		}
+		.air__item:nth-child(4) {
+			/* приєднали сценарій */
+			animation: air 9s 17.5s linear 1 forwards;
+
+			position: absolute;
+			top: 500px;
+			left: 180px;
+		}
+
+
+
+				/* 5 */
+				.air__item img:nth-child(5){ /* общие настройки для всех шариков */
+					width: 200px;
+					height: 250px;
+				}
+				.air__item:nth-child(5) {
+					/* приєднали сценарій */
+					animation: air 5s 20s linear 1 forwards;
+		
+					position: absolute;
+					top: 500px;
+					left: 120px;
+				}
+
+
+				/* 6 */
+				.air__item img:nth-child(6){ /* общие настройки для всех шариков */
+					width: 250px;
+					height: 370px;
+				}
+				.air__item:nth-child(6) {
+					/* приєднали сценарій */
+					animation: air 8s 20.5s linear 1 forwards;
+		
+					position: absolute;
+					top: 500px;
+					left: 170px;
+				}
+
+
+				/* 7 */
+				.air__item img:nth-child(7){ /* общие настройки для всех шариков */
+					width: 250px;
+					height: 370px;
+				}
+				.air__item:nth-child(7) {
+					/* приєднали сценарій */
+					animation: air 11s 21s linear 1 forwards;
+		
+					position: absolute;
+					top: 500px;
+					left: 190px;
+				}
+
+		/* 1 */
+	/* задаємо сценарій */ 
+	@keyframes air {
+		0% {
+			transform: translateY(0px);
+		}
+		100% {
+			transform: translateY(-850px);
 		}
 	}
