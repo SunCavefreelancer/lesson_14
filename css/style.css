@@ -22,6 +22,7 @@ body {
 
 .text__third-title a {
 	text-decoration: underline;
+	color: inherit;
 	color: aqua;
 	transition: 0.5s;
 }
